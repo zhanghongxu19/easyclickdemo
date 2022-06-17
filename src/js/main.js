@@ -22,7 +22,6 @@
  */
 
 function main() {
-    yymaotai();
     //开始再这里编写代码了！！
     // toast("Hello World");
     // var name = readConfigString("name");
@@ -41,21 +40,8 @@ function main() {
     }
     logd("开始执行脚本...")
     // home();
-}
-
-function yymaotai() {
-    const maotaiPackageName = 'com.moutai.mall';
-    // const maotaiPackageName = 'com.xunmeng.pinduoduo';
-    if (!utils.isAppExist(maotaiPackageName)) {
-        logd("未安装i茅台");
-        return;
-    }
-    logd("正在打开i茅台");
-    const res = utils.openApp(maotaiPackageName);
-    logd(res);
-    sleep(1000);
-    toast("等待8秒")
-    sleep(8000);
+    // preOrderMaotao();
+    jtqiandao();
 }
 
 function autoServiceStart(time) {
