@@ -41,7 +41,10 @@ function main() {
     logd("开始执行脚本...")
     // home();
     // preOrderMaotao();
-    jtqiandao();
+    // jtqiandao();
+    // delPDDAddress();
+    pdd();
+
 }
 
 function autoServiceStart(time) {
@@ -57,5 +60,19 @@ function autoServiceStart(time) {
     }
     return isServiceOk();
 }
+
+function packFindColorEx(xyData) {
+    // login: ["login", "0x5A9E94-0x101010", 981, 835, 1274, 916],
+    // 获取对应分辨率的坐标
+    let xy = getAutoXY(xyData[0] + "start", xyData[2], xyData[3])
+    let xy2 = getAutoXY(xyData[0] + "end", xyData[4], xyData[5])
+    sleep(3000)
+    // 获取开始按钮颜色
+    let points = image.findColorEx(xyData[1], 0.5, xy[0], xy[1], xy2[0], xy2[1], 1, 1);
+    if (points) {
+        return points
+    }
+}
+
 
 main();
